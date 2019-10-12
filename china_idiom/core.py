@@ -8,7 +8,7 @@ Introduction:
 import re
 import pandas as pd
 from china_idiom.constants import (
-    idiom_df, pinyin_letter_dict, clean_complie
+    idiom_df, clean_complie
 )
 
 __all__ = [
@@ -28,7 +28,7 @@ def multiple_replace(dict_, text):
 def is_idiom(word):
     """
     判断一个词是否是成语
-    :param word: str,词
+    :param word: str,成语
     :return: bool, True，是成语。False，不是成语。
     """
     word = re.sub(clean_complie, '', word)  # 清除非中文的符号
@@ -65,9 +65,9 @@ def is_idiom_solitaire(before_word, after_word):
 def next_idioms_solitaire(word, count=1, heteronym=True, smaller=False):
     """
     :param word: str, 成语
-    :param count: int, 返回数量
-    :param heteronym: bool,是否可以使用同音字
-    :param smaller: bool, 是否选择尽可能的少的后续
+    :param count: int, 返回数量。默认为 1。
+    :param heteronym: bool,是否可以使用同音字。默认为 True。
+    :param smaller: bool, 是否选择尽可能的少的后续（为了让别人更难接）。默认为 False。
     :return: list
     """
     # 确保 count 值有意义
@@ -104,12 +104,12 @@ def next_idioms_solitaire(word, count=1, heteronym=True, smaller=False):
     return result_list
 
 
-def auto_idioms_solitaire(word, max_count=10, heteronym=True):
+def auto_idioms_solitaire(word='', max_count=10, heteronym=True):
     """
     自动接龙模式 - 输入一个汉字或者成语，程序自动输出一组成语接龙的结果。
-    :param word: str 起始汉字
-    :param max_count: int, 最大长度
-    :param heteronym: 是否可以用同音字
+    :param word: str 起始汉字或者成语，用输入''
+    :param max_count: int, 最大长度。默认为：10 条
+    :param heteronym: bool, 是否可以用同音字。默认为 True
     :return: list
     """
     result_list = []
@@ -135,6 +135,7 @@ def auto_idioms_solitaire(word, max_count=10, heteronym=True):
 
 def search_idiom(word, position=0, count=1, is_detail=False):
     """
+    搜索查找成语。
     :param word: str,关键词
     :param position: int, 所在位置，默认为：0
     :param count: int ，返回最大数量 默认为： 1
@@ -158,17 +159,3 @@ def search_idiom(word, position=0, count=1, is_detail=False):
             'records')
 
     # contains(self, pat, case=True, flags=0, na=nan, regex=True)
-
-
-if __name__ == '__main__':
-    word = '一心一意'
-    # result = is_idiom(word)
-    # print(result)
-    # result = next_idioms_solitaire(word)
-    # print(result)
-
-    # result = auto_idioms_solitaire(word, max_count=10, heteronym=True)
-    # print(result)
-
-    result = search_idiom(word, count=2, is_detail=True)
-    print(result)
