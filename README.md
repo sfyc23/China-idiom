@@ -9,9 +9,9 @@
 ## 关于
 
 * GitHub: <https://github.com/sfyc23/China-idiom>  
-* License: MIT license  
 * PyPI: <https://pypi.org/project/china-idiom/> 
 * Python version: >= 3.5
+* License: MIT license  
 
 ## 特性
 

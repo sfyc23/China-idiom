@@ -7,7 +7,7 @@ Introduction:
 """
 
 __title__ = 'china_idiom'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 __author__ = 'sfyc23'
 __license__ = 'MIT'
 __description__ = '成语与成语接龙查询工具'

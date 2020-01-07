@@ -13,7 +13,8 @@ from china_idiom.constants import (
 
 __all__ = [
     'is_idiom', 'is_idiom_solitaire',
-    'next_idioms_solitaire', 'auto_idioms_solitaire', 'search_idiom'
+    'next_idioms_solitaire', 'auto_idioms_solitaire',
+    'search_idiom', 'sample'
 ]
 
 
@@ -137,7 +138,7 @@ def search_idiom(word, position=0, count=1, is_detail=False):
     """
     搜索查找成语。
     :param word: str,关键词
-    :param position: int, 所在位置，默认为：0
+    :param position: int, 关键词所在位置，默认为：0
     :param count: int ，返回最大数量 默认为： 1
     :param is_detail: bool,是否返回详细内容（包括：拼音，拼音缩写，解释，来源，造句）
     :return: list。
@@ -159,3 +160,18 @@ def search_idiom(word, position=0, count=1, is_detail=False):
             'records')
 
     # contains(self, pat, case=True, flags=0, na=nan, regex=True)
+
+
+def sample():
+    """
+    获取一个随机的成语
+    :return: str
+    """
+    yy = idiom_df.sample()
+    cc = yy['word'].tolist()[0]
+    return cc
+
+
+if __name__ == '__main__':
+    y = sample()
+    print(y)
