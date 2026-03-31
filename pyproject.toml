@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "china-idiom"
+version = "0.4.0"
+description = "成语与成语接龙查询工具"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "sfyc23", email = "sfyc23@gmail.com"},
+]
+keywords = ["China", "idiom", "成语", "成语接龙", "成语大全"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/sfyc23/China-idiom"
+Repository = "https://github.com/sfyc23/China-idiom"
+
+[tool.setuptools.packages.find]
+include = ["china_idiom*"]
+
+[tool.setuptools.package-data]
+china_idiom = ["idiom.csv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

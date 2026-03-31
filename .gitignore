@@ -1,5 +1,62 @@
-.idea
-__pycache__
-build
-dist
-*.egg-info
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+share/python-wheels/
+var/
+wheels/
+pip-wheel-metadata/
+*.egg
+*.egg-info/
+MANIFEST
+
+# Virtual environments
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Test, coverage, and analysis caches
+.coverage
+.coverage.*
+.hypothesis/
+.mypy_cache/
+.nox/
+.pyre/
+.pytest_cache/
+.pytype/
+.ruff_cache/
+.tox/
+coverage/
+htmlcov/
+dmypy.json
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Project-local working directories
+.AI/
+.Android/
